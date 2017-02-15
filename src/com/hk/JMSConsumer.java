@@ -30,7 +30,7 @@ public class JMSConsumer {
 			connection = connectionFactory.createConnection();
 			connection.start();
 			session = connection.createSession(Boolean.FALSE, Session.AUTO_ACKNOWLEDGE);
-			// 获取session注意参数值xingbo.xu-queue是一个服务器的queue，须在在ActiveMq的console配置
+			// 获取session注意参数值是一个服务器的queue，须在在ActiveMq的console配置
 			destination = session.createQueue("name");
 			consumer = session.createConsumer(destination);
 			while (true) {
